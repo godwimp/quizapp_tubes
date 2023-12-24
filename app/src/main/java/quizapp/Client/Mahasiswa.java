@@ -2,7 +2,7 @@ package main.java.quizapp.Client;
 import java.util.*;
 
 public class Mahasiswa extends User{
-    private String nim;
+    private int nim;
     private List<Nilai> listNilai;
     public Mahasiswa(String fullname, String username, String password, String nim) {
         super(fullname, username, password);

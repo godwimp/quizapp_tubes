@@ -1,5 +1,7 @@
 package main.java.quizapp.Client;
 
+import javax.xml.crypto.Data;
+
 import main.java.quizapp.DatabaseHelper;
 
 public class Admin extends User implements Observable{
@@ -13,22 +15,21 @@ public class Admin extends User implements Observable{
     }
     @Override
     public void showMhs(){
-        // show mahasiswa dari database
+        DatabaseHelper.showMhs();
     }
     public void showDosen(){
-        // show dosen dari database
+        DatabaseHelper.showDosen();
     }
     public void addMahasiswa(Mahasiswa m){
-        // add mahasiswa to database
+        DatabaseHelper.addMahasiswa(m);
     }
     public void AddDosen(Dosen d){
-        // add dosen to database
+        DatabaseHelper.addDosen(d);
     }
     public int getNMahasiswa(){
-        return 0;
+        return DatabaseHelper.getNMahasiswa();
     }
     public int getNDosen(){
-        return 0;
+        return DatabaseHelper.getNDosen();
     }
-    // TODO : lengkapi semua method
 }

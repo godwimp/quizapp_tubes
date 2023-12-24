@@ -9,6 +9,7 @@ public class App {
     }
 
     public static void main(String[] args) {
+        // TODO : Implementasi kelas-kelas yang berhubungan dengan package Course (Quiz)
         System.out.println(new App().getGreeting());
     }
 }

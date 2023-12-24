@@ -8,6 +8,7 @@ public class Quiz {
         this.questions = questions;
         this.nQuestion = nQuestion;
     }
+    // TODO : Link kelas dan database
     // Semua getter dan setter akan mengambil data dari database
     public List<Question> getQuestions(){
         return this.questions;

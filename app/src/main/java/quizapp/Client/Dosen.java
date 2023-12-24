@@ -4,7 +4,7 @@ import main.java.quizapp.DatabaseHelper;
 import main.java.quizapp.Course.Quiz;
 
 public class Dosen extends User implements Observable{
-    private String NIP;
+    private int NIP;
     public Dosen(String fullname, String username, String password, String NIP) {
         super(fullname, username, password);
         this.NIP = NIP;
@@ -24,10 +24,15 @@ public class Dosen extends User implements Observable{
     public void deleteQuestion(Quiz q){
         // delete question from database
     }
+    @Override
     public void showMhs(){
-        // show mahasiswa dari database
+        DatabaseHelper.showMhs();
     }
     public void showNilaiMhs(Mahasiswa m, Quiz q){
         // show nilai mahasiswa dari database
+    }
+    // getter nip
+    public String getNIP(){
+        return this.NIP;
     }
 }

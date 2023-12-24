@@ -13,6 +13,7 @@ public class Question {
         this.correctAnswer = correctAnswer;
         this.bobotAns = bobotAns;
     }
+    // TODO : Link kelas dan database
     // Semua getter dan setter akan mengambil data dari database
     public String getQuestion(){
         return this.question;
