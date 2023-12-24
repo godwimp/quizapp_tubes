@@ -23,6 +23,12 @@ dependencies {
 
     // This dependency is used by the application.
     implementation("com.google.guava:guava:32.1.1-jre")
+
+    // Dependency baru terkait koneksi mysql
+    implementation group: 'mysql', name: 'mysql-connector-java', version: '8.0.33'
+    
+    // Dependency baru terkait hibernate
+    implementation "org.hibernate.orm:hibernate-core:6.4.0.Final"
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
