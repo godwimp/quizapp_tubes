@@ -13,7 +13,7 @@ public class Dosen extends User implements Observable{
         return DatabaseHelper.validateLogin(username, password);
     }
     public void createQuestion(Quiz q){
-        // add question to database
+        // Metode ini akan menambahkan question ke database, bisa dengan cara menggunakan kelas DatabaseHelper untuk menambahkan question ke database
     }
     public void showQuestion(Quiz q){
         // show question from database

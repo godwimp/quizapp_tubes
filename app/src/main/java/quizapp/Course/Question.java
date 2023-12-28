@@ -30,19 +30,5 @@ public class Question {
     public String getCorrectAnswer(){
         return this.correctAnswer;
     }
-    public void setQuestion(String question){
-        this.question = question;
-    }
-    public void setChoices(List<String> choices){
-        this.choices = choices;
-    }
-    public void setChoosedAnswer(String choosedAnswer){
-        this.choosedAnswer = choosedAnswer;
-    }
-    public void setBobotAns(int bobotAns){
-        this.bobotAns = bobotAns;
-    }
-    public void setCorrectAnswer(String correctAnswer){
-        this.correctAnswer = correctAnswer;
-    }
+    // SETTER tidak diperlukan, karena semuanya akan diset di konstruktor
 }

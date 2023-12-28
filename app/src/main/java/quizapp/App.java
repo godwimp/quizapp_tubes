@@ -9,7 +9,12 @@ public class App {
     }
 
     public static void main(String[] args) {
-        // TODO : Implementasi kelas-kelas yang berhubungan dengan package Course (Quiz)
+        // CARA Menambahkan question kedalam database: 
+        /*
+         * 1. Buat object Question terlebih dahulu
+         * 2. Panggil method setQuestion() dari DatabaseHelper untuk menambahkan question ke database
+         * Jika ingin diambil kembali dan ditampilkan, gunakan method getQuestion() dari DatabaseHelper
+         */
         System.out.println(new App().getGreeting());
     }
 }

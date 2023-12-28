@@ -106,4 +106,65 @@ public class DatabaseHelper {
         }
         return 0;
     }
+    public static List<Question> getQuestions(){
+        List<Question> questions = new ArrayList<>();
+        String sql = "SELECT * from quiz";
+        try(Connection conn = getConnection();
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql)){
+                while(rs.next()){
+                    int questionId = rs.getInt("questionid");
+                    String question = rs.getString("question");
+                    String choice1 = rs.getString("choice1");
+                    String choice2 = rs.getString("choice2");
+                    String choice3 = rs.getString("choice3");
+                    String choice4 = rs.getString("choice4");
+                    String realAnswer = rs.getString("realanswer");
+                    int bobot = rs.getInt("bobot");
+                    List<String> choices = new ArrayList<>();
+                    choices.add(choice1);
+                    choices.add(choice2);
+                    choices.add(choice3);
+                    choices.add(choice4);
+                    Question q = new Question(questionId, question, choices, realAnswer, bobot);
+                    questions.add(q);
+                }
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+        return questions;
+    }
+    public static int getNQuestion(){
+        String sql = "SELECT COUNT(*) FROM quiz";
+        try(Connection conn = getConnection();
+            Statement stmt = conn.createStatement();
+            ResultSet rs = stmt.executeQuery(sql)){
+                if(rs.next()){
+                    return rs.getInt(1);
+                }
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+        return 0;
+    }
+    public static void setQuestions(List<Question> questions){
+        String sql = "INSERT INTO quiz (questionid, question, choice1, choice2, choice3, choice4, realanswer, bobot) VALUES (NULL, ?, ?, ?, ?, ?, ?, ?)";
+        try(Connection conn = getConnection();
+            PreparedStatement stmt = conn.prepareStatement(sql)){
+                for(Question q : questions){
+                    stmt.setString(2, q.getQuestion());
+                    List<String> choices = q.getChoices();
+                    stmt.setString(3, choices.get(0));
+                    stmt.setString(4, choices.get(1));
+                    stmt.setString(5, choices.get(2));
+                    stmt.setString(6, choices.get(3));
+                    stmt.setString(7, q.getRealAnswer());
+                    stmt.setInt(8, q.getBobot());
+                    stmt.executeUpdate();
+                }
+                System.out.println("Soal berhasil ditambahkan");
+        } catch(Exception e){
+            e.printStackTrace();
+        }
+    }
 }
