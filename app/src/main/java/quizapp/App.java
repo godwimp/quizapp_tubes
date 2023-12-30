@@ -5,16 +5,10 @@ package quizapp;
 
 public class App {
     public String getGreeting() {
-        return "Hello World!";
+        return "Test Pull!";
     }
 
     public static void main(String[] args) {
-        // CARA Menambahkan question kedalam database: 
-        /*
-         * 1. Buat object Question terlebih dahulu
-         * 2. Panggil method setQuestion() dari DatabaseHelper untuk menambahkan question ke database
-         * Jika ingin diambil kembali dan ditampilkan, gunakan method getQuestion() dari DatabaseHelper
-         */
         System.out.println(new App().getGreeting());
     }
 }
